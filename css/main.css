@@ -1,0 +1,136 @@
+:root {
+    --clr-sedan-bg: hsl(31, 77%, 52%);
+    --clr-suv-bg: hsl(184, 100%, 22%);
+    --clr-luxury-bg: hsl(179, 100%, 13%);
+    --clr-para: hsla(0, 0%, 100%, 0.75);
+    --clr-content: hsl(0, 0%, 95%);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.body,
+.container {
+    /* display: grid; */
+    /* place-items: center; */
+    font-weight: 700;
+    font-size: 15px;
+    /* min-height: 100vh; */
+    /* vertical-align: middle; */
+    /* max-width: 100%; */
+}
+
+@media (min-width:10em) {
+
+    header,
+    section {
+        padding: 0rem;
+    }
+}
+
+.container {
+    /* TOP RIGHT BOTTOM LEFT */
+    padding: 60px 10px 60px 10px;
+}
+
+.split {
+    display: flex;
+    flex-direction: column;
+}
+
+
+@media (min-width: 50em) {
+    .split {
+        flex-direction: row;
+    }
+
+    /* Inside a split class, all the children has flex-basis of*/
+    .split>* {
+        flex-basis: 100%;
+    }
+
+    /* (* + *)=> this is called json sibling selector. Any element before the current element will have 2em space. 
+    Refer the space between image and text in 3 and 4th sections */
+    .split>*+* {
+        margin-left: 2em;
+    }
+}
+
+@media only screen and (max-height:400px) {
+    .container {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: 600px;
+        height: 400px;
+    }
+}
+
+.heading,
+button {
+    color: var(--clr-content);
+}
+
+.card-sedan {
+    background-color: var(--clr-sedan-bg);
+    padding: 2rem;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    line-height: 1.5em;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+}
+
+.card-suv {
+    background-color: var(--clr-suv-bg);
+    padding: 2rem;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    line-height: 1.5em;
+}
+
+.card-luxury {
+    background-color: var(--clr-luxury-bg);
+    padding: 2rem;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    color: white;
+    line-height: 1.5em;
+    font-family: 'Oswald', sans-serif;
+}
+
+.sedan-button {
+    background-color: white;
+    border-radius: 1.25rem;
+    padding: 10px;
+    border: 0;
+    width: 135px;
+    font-size: 15px;
+    color: var(--clr-sedan-bg);
+}
+
+.suv-button {
+    background-color: white;
+    border-radius: 1.25rem;
+    padding: 10px;
+    border: 0;
+    width: 135px;
+    font-size: 15px;
+    color: var(--clr-suv-bg);
+}
+
+.luxury-button {
+    background-color: white;
+    border-radius: 1.25rem;
+    padding: 10px;
+    border: 0;
+    width: 135px;
+    font-size: 15px;
+    color: var(--clr-luxury-bg);
+}
+
+.para {
+    color: var(--clr-para);
+}
